@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Newsletter sign-up form</title>
+</head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+<body>
+  <main class="container">
+    <!-- hero image  -->
+    <div class="image">
+      <picture>
+        <source media="(min-width:750px)" src="assets/images/illustration-sign-up-desktop.svg" />
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="main image" />
+      </picture>
+    </div>
+    <!-- Title and text below -->
+    <section class="copy__text">
+      <h1 class="heading">Stay Updated!</h1>
+      <p class="description">Join 60,000+ product managers receiving monthly updates on:</p>
+      <!-- check boxes -->
+      <div class="checks">
+        <div>
+          <img src="assets/images/icon-list.svg" alt="check icon" />
+          <p>Product discovery and building what matters</p>
+        </div>
+        <div>
+          <img src="assets/images/icon-list.svg" alt="check icon" />
+          <p>Measuring to ensure updates are a success</p>
+        </div>
+        <div>
+          <img src="assets/images/icon-list.svg" alt="check icon" />
+          <p>And much more!</p>
+        </div>
+      </div>
+    </section>
+    <!-- Sign-up form  -->
+    <form>
+      <div class="email__address">
+        <label for="email"> Email Address</label>
+        <label for="invalid email">Valid email required</label>
+      </div>
+      <div class="input__email">
+        <input type="email" name="email" id="email" placeholder="email@company.com" autocomplete="off" value="" />
+      </div>
+      <div class="input__submit">
+        <input type="submit" value="Subscribe to monthly newsletter" />
+      </div>
+    </form>
+    <!-- Sign-up form end -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <!-- <style>
+    <!-- Success message start -->
+    <div class="success__message inactive">
+      <img src="assets/images/icon-success.svg" alt="Success image after subscribing to newsletter" />
+      <h2 class="thankyou__prompt">Thanks for subscribing!</h2>
+      <p class="thankyou__message">
+        A confirmation email has been sent to <span class="email__service">ash@loremcompany.com</span>.
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button class="btn dismiss">Dismiss message</button>
+    </div>
+  </main>
+</body>
+
+<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+<!-- <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> -->
-</head>
-<body>
-
-  <!-- Sign-up form start -->
-
-
-
-
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-
-  <script src="index.js"></script>
-</body>
-</html>
