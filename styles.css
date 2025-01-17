@@ -15,8 +15,9 @@
 --White: hsl(0, 0%, 100%);
 }
 
-* {
-    padding: 0;
+*, *::before, *::after {
     box-sizing: border-box;
-    
-}
+  }
+  * {
+    margin: 0;
+  }
