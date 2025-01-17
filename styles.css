@@ -1,64 +1,239 @@
 @font-face {
-    font-family:"Roboto Bold" ;
+    font-family: "Roboto Bold";
     src: url('assets/fonts/Roboto-Bold.ttf');
 }
+
 @font-face {
     font-family: "Roboto Regular";
     src: url('assets/fonts/Roboto-Regular.ttf');
 }
 
 :root {
-
---DarkSlateGrey: hsl(234, 29%, 20%);
---CharcoalGrey: hsl(235, 18%, 26%);
---Grey: hsl(231, 7%, 60%);
---White: hsl(0, 0%, 100%);
+    --Tomato: hsl(4, 100%, 67%);
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-  }
-  * {
+}
+
+* {
     margin: 0;
-  }
-body{
+}
+
+body {
     line-height: 1.8;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Roboto Regular";
+    font-family: 'Roboto Regular';
     color: var(--CharcoalGrey);
 }
 
-  img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
     max-width: 100%;
     display: block;
-  }
+}
 
-  input, button, textarea, select{
+input,
+button,
+textarea,
+select {
     overflow-wrap: break-word;
+}
+
+picture>img {
+    width: 100%;
+
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-family: 'Roboto Bold';
+    color: var(--DarkSlateGrey);
+}
+h2 {
+    font-size: 2rem;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+}
+
+input[type="email"] {
+    width: 100%;
+    border: none;
+}
+
+input[type="email"]:focus {
+    outline: none;
+}
+
+input[type="submit"]{
+    border:none;
+    color:white;
+    font-size:large;
+    background-image: linear-gradient(0deg,hsl(234, 29%, 20%) 90%,hsl(234, 29%, 20%));
+    margin-top:1.5rem;
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    border-radius: 0.5rem;
   }
+  input[type="submit"]:hover, button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(90deg,hsl(3, 65%, 65%) 5%,var(--tomato));;
+}
+
+button {
+    margin-top: 10rem;
+}
+
+span{
+    font-weight: 700;
+}
 
 
-  .inactive{
+/*  class styles */
+
+.copy__text {
+    padding: 1rem 1rem 1rem 1.5rem;
+}
+
+.inactive {
     display: none;
-  }
+}
+
+.checks {
+    gap: 1rem;
+    flex-direction: column;
+    display: flex;
+    margin-top: 1.7rem;
+}
+
+.checks .items {
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+}
+
+.input__email {
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    border: 1px solid var(--Grey);
+    overflow: hidden;
+}
+
+.input__email:focus-within {
+    border: none;
+    outline: 0.5 px solid var(--CharcoalGrey);
+}
+
+.invalid-email {
+    border: 1.5px solid red;
+}
+
+.email__address{
+    font-family: 'Roboto Bold';
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.email__address:first-child {
+    color: var(--DarkSlateGrey);
+}
+
+.invalid-email {
+    color:var(--Tomato) ;
+}
+
+.success__message {
+    padding: 10rem 1rem 1rem 1.5rem;
+}
+
+.thankyou__prompt {
+    margin-top:2.5rem;
+    line-height: 2.25;
+}
+
+.thankyou__message {
+    margin-top:1.5rem;
+
+}
+
+
 
 @media screen and(min-width:750px) {
-    body{
+    body {
         min-height: 100vh;
-        background-color: var(--CharcoalGrey) ;
+        background-color: var(--CharcoalGrey);
+        margin-right: 2rem;
+        margin-left: 2rem;
     }
-    h1{
+    h1 {
         font-size: 3.6rem;
         text-align: center;
     }
+
     h2 {
         font-size: 3rem;
         text-align: center;
     }
-    button{
-        margin-top: 1.8rem;
+
+    button {
+        margin-top: 5rem;
     }
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+        border-radius: 0.75rem;
+        display: grid;
+        background-color: var(--White);
+        max-width: 950px;
+    }
+    .image {
+        grid-column: 2 / 3;
+        padding: 1.25rem;
+    }
+    .copy__text {
+        grid-column: 1 / 2 ;
+        grid-row: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1.5rem;
+        width: 85%;
+    }
+    .description {
+        margin-top: 1.5rem;
+    }
+    .success__message {
+       max-width: 450px;
+       grid-template-columns: 1fr;
+       padding:2rem 2.5rem 3rem 2.5rem;
+    }
+
+    .success__message > .thankyou__prompt {
+            text-align: left;
+            line-height: 3rem;
+            font-size: 3.5rem;
+
+    }
+
+
 }
